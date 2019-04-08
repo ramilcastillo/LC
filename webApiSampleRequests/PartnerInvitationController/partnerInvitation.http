@@ -1,0 +1,35 @@
+# See README_... in this folder for more information
+
+# PartnerInvitation 
+
+### 404 when no invitation exists
+GET https://{{host}}/api/userprofiles/me/partnerinvitation  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 400 Bad Request, due to phone nr being an office/land line and not a mobile nr
+POST https://{{host}}/api/userprofiles/me/partnerinvitation  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{"FirstName":"Jane","LastName":"Doe","MobilePhone":"8582072258","TypeOfGender":1,"DateOfBirth":"1987-07-30T00:00:00"}
+### EXPECTED RESPONSE payload:
+{
+  "error": {
+    "code": "MobilePhone_ValidationError",
+    "message": "BusinessLogicException",
+    "debugMessage": "Mobile phone nr '8582072258' is not valid"
+  }
+}
+
+### 204
+POST https://{{host}}/api/userprofiles/me/partnerinvitation  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{"FirstName":"Jane","LastName":"Doe","MobilePhone":"7605006125","TypeOfGender":1,"DateOfBirth":"1987-07-30T00:00:00"}
+
+### 204 Resend Invite
+POST https://{{host}}/api/userprofiles/me/partnerinvitation/resendinvite  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}

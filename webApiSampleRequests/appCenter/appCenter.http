@@ -1,0 +1,11 @@
+
+
+### 204 (with all properties)
+PUT https://{{host}}/api/userprofiles/me/appcenter  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "deviceId": "ddf6a5c9-7b55-4e71-a457-54c69ad0b77f",
+  "typeDeviceOs": 1,
+}

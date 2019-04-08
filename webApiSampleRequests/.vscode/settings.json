@@ -1,0 +1,20 @@
+{
+    "rest-client.timeoutinmilliseconds": 30000,
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "sample": "v1",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJFQTVDRUUyNC05MEY5LTQ4MDQtQTQ1QS00RDJFN0ZDQTVEMUEiLCJqdGkiOiI5NmQzOTg3NDAzY2M0M2EyYTEzMzU5MTlkNWZiNDQyOCIsInVuaXF1ZV9uYW1lIjoiRUE1Q0VFMjQtOTBGOS00ODA0LUE0NUEtNEQyRTdGQ0E1RDFBIiwiZW1haWwiOiJwZ3JpbXNrb2dAbGlmZWNvdXBsZS5uZXQiLCJvaWQiOiJFQTVDRUUyNC05MEY5LTQ4MDQtQTQ1QS00RDJFN0ZDQTVEMUEiLCJmYW1pbHlfbmFtZSI6IkdyaW1za29nLWxjIiwiZ2l2ZW5fbmFtZSI6IlBlci1sYyIsIm5iZiI6MTUzNTQ2Mzk2MiwiZXhwIjoxNTM4MTQyMzYyLCJpYXQiOjE1MzU0NjM5NjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODg4OCIsImF1ZCI6InVzZXJzIn0.OH8ENDE35ZvmdekzfIJWGWfa5bVpVHkT-XVyskXDJB4",           
+        },
+        "local": {
+            "host": "localhost:44319"
+        },
+        "lcapicitest-azure": {
+            "host": "lcapicitest.azurewebsites.net",
+        },
+        "webapilcprod-azure": {
+            "host": "webapilcprod.azurewebsites.net",
+            //ADB2c token for pgrimskog@lifecouple.net, last time generated was 180924@1746
+            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJleHAiOjE1Mzc4Mzk5NzEsIm5iZiI6MTUzNzgzNjM3MSwidmVyIjoiMS4wIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5taWNyb3NvZnRvbmxpbmUuY29tLzZlY2VlZDllLTMyYTktNDk5My1hYjFmLWJhODM5ODlkZjc0YS92Mi4wLyIsInN1YiI6Ijk0N2JjODc0LTdmZjctNDQ5ZC04ZDA2LTUwZjEyNTUyNjQ2ZCIsImF1ZCI6IjljNTkxZjc5LTQ0OTUtNDQ4OS05ZTllLTAxMmZlOWJlMTUyZiIsIm5vbmNlIjoiZGVmYXVsdE5vbmNlIiwiaWF0IjoxNTM3ODM2MzcxLCJhdXRoX3RpbWUiOjE1Mzc4MzYzNzEsIm9pZCI6Ijk0N2JjODc0LTdmZjctNDQ5ZC04ZDA2LTUwZjEyNTUyNjQ2ZCIsImZhbWlseV9uYW1lIjoiR3JpbXNrb2ctTG4iLCJnaXZlbl9uYW1lIjoiUGVyLUZuIiwiZW1haWxzIjpbInBncmltc2tvZ0BsaWZlY291cGxlLm5ldCJdLCJ0ZnAiOiJCMkNfMV9zdXNpIn0.TJ24v4KepXMavWnB7JfGgLKetyjVHqpQqWcaCeXYauQhPrG_uede4tHbLSGhbGMCJBKkByT6kTKuCg_LXsv9l50RNVxwJNSsxF6WPbLfXU3cBA42IcdAM7DTp_UwikXdRg1L6M4eDZ668ZaTmsBlWbR1ZaMdBnMiZIUpeso62QZGBCEoJxSC4oa5z9K3VNzYpZG_kbktQH1EN_m6ti7W73p8TwJHJd-4cVLIm5bpT6R4MWXCVgZCxzpPVTiGFGO-rC2I_9z61UVUklDqjgGcq2EiJlezlrqo0KTZJB-_jng4eQKVcnIVb5kfg4MzXBRObnJaq1ir-C_1yd3djGZO1g",
+        }
+    }
+}

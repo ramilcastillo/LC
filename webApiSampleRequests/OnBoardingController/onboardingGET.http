@@ -1,0 +1,8 @@
+# See README_... in this folder for more information
+
+# OnBoarding data 
+
+### 200 (get metadata for the 3 sets of questions for the Mobile app to dynmaically generate the Views)
+GET https://{{host}}/api/userprofiles/me/onboarding  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}

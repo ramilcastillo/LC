@@ -1,0 +1,35 @@
+# See README_... in this folder for more information
+
+# UserprofileRegistrationAboutYourRelationShip  for current user, using the oid in the token
+
+### 404 when no data, 200 when data
+GET https://{{host}}/api/userprofiles/me/registration/aboutyourrelationship  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 204 (with all properties)
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyourrelationship  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "isMarried": true,
+  "hasMoreThanOneMarriage": false,
+  "lastWeddingDate":  "2002-2-22",
+  "nrOfChildren": 1,
+  "nrOfStepChildren": null,
+  "beenToCounselorOrTherapist":3
+}
+
+### 204 (with only some properties)
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyourrelationship  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "lastWeddingDate": "2003-03-03",
+  "nrOfChildren": 3,
+}
+
+
+

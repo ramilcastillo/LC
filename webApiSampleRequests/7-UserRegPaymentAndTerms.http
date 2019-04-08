@@ -1,0 +1,33 @@
+# See README_... in this folder for more information
+
+# UserprofileRegistrationPaymentAndTerms for current user, using the oid in the token
+
+### 404 when no data, 200 when data
+GET https://{{host}}/api/userprofiles/me/registration/paymentandterms  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 204 (with all properties)
+PUT https://{{host}}/api/userprofiles/me/registration/paymentandterms  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "hasAgreedToTandC": true,
+  "hasAgreedToPrivacyPolicy": true,
+  "hasAgreedToRefundPolicy": null
+}
+
+### 204 (with only some properties)
+PUT https://{{host}}/api/userprofiles/me/registration/paymentandterms  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "hasAgreedToTandC": false,
+  "hasAgreedToRefundPolicy": true
+}
+
+
+
+

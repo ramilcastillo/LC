@@ -1,0 +1,38 @@
+# See README_... in this folder for more information
+
+# Emotional Bank Account 
+
+### 200 at all times, as long as the user exists
+GET https://{{host}}/api/userprofiles/me/eba  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 204 at all times, as long as the user exists
+POST https://{{host}}/api/userprofiles/me/eba  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{ 
+    "Comment": "deposited 100 points.",
+    "PointsToDeposit": 100 
+}
+
+### 400 at all times - Comment to short
+POST https://{{host}}/api/userprofiles/me/eba  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{ 
+    "Comment": "12",
+    "PointsToDeposit": 50 
+}
+
+### 400 at all times - Comment to short
+POST https://{{host}}/api/userprofiles/me/eba  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{ 
+    "Comment": "12",
+    "PointsToDeposit": 5 
+}

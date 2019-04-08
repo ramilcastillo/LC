@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyVersion>21.2018.0925.1</AssemblyVersion>
+    <UserSecretsId>ac948920-353d-45bc-8520-906312b08889</UserSecretsId>
+    <FileVersion>0.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\lifecoupleapi - Web Deploy.pubxml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="libs\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LifeCouple.DTO" Version="1.0.0.481-ci" />
+    <PackageReference Include="LifeCouple.Server.Instrumentation" Version="1.0.0.480-ci" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" />
+    <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LifeCouple.DAL\LifeCouple.DAL.csproj" />
+    <ProjectReference Include="..\LifeCouple.Server.Messaging\LifeCouple.Server.Messaging.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AP.CrossPlatform.Core">
+      <HintPath>libs\AP.CrossPlatform.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

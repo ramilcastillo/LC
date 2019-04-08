@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Azure Media Player</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <link href="https:///amp.azure.net/libs/amp/2.1.7/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+    <script src="https:///amp.azure.net/libs/amp/2.1.7/azuremediaplayer.min.js"></script>
+</head>
+<body>
+    <video id="azuremediaplayer" class="azuremediaplayer amp-default-skin amp-big-play-centered" controls autoplay width="@ViewData["Width"]" height="@ViewData["Height"]" poster="" data-setup='{}' tabindex="0">
+        <source src="https://medialc-uswe.streaming.media.azure.net/ff6da407-cbb8-492b-903f-eb32eb4d24d7/LifeCouple%20Promo%20Gavin_180619.ism/manifest" type="application/vnd.ms-sstr+xml" />
+        <p class="amp-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+    </video>
+</body>
+</html>
+

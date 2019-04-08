@@ -1,0 +1,8 @@
+# See README_... in this folder for more information
+
+### 200 
+GET https://{{host}}/MediaPlayerPage?width=640&height=360
+
+
+### 200 
+GET https://{{host}}/MediaPlayerPage?width=100

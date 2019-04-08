@@ -1,0 +1,32 @@
+# See README_... in this folder for more information
+
+# To get userprofile for current user, using the oid in the token
+### 501 for now...
+GET https://{{host}}/api/userprofiles/me/registration/aboutyourpartner  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 204 (with all properties)
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyourpartner  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "partnerFirstName": "Jane",
+  "partnerLastName": "Doe",
+  "partnerEmail": "janedoe@lifecouple.net",
+  "partnerMobilePhone": "619",
+  "partnerGender": "f",
+  "partnerDateOfBirth": "2001-01-01"
+}
+
+### 204 (with only some properties)
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyourpartner  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "partnerMobilePhone": "619909090",
+  "partnerDateOfBirth": "2002-02-02"
+}
+

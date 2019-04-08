@@ -1,0 +1,27 @@
+﻿<html>
+<head>
+    <title>Azure AD B2C API Sample</title>
+</head>
+<body>
+    Assumption is that you are running this in VS 2017 and the url endpoint is https://localhost:44319
+    <br />
+    Your API will now be available via https://localhost:44319/api/systemstatus/checktoken
+    <br />
+    <br />
+    To obtain a new JWT token:
+    <br />
+    When you press the link below a new browser tab will open up and you will be presented with a web page served up by AD B2C and have the option to register or login, after that is done you will be redirected back to this page with the token part of the query string in the url)
+    <br />
+    Link to obtain a token: <a href="https://login.microsoftonline.com/lcdevtestb2ctenant.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_susi&client_id=9c591f79-4495-4489-9e9e-012fe9be152f&nonce=defaultNonce&redirect_uri=https%3A%2F%2Flocalhost%3A44319%2F&scope=openid&response_type=id_token&prompt=login" target="_blank">here.</a>
+    <br />
+    <br />
+    Once you have a token, try it out via curl using the comand below.
+    <br />
+    Make sure your replace [TOKEN] with the id_token obtained after going through the steps presented when clicking the link above.
+    <br />
+    <i>curl https://localhost:44319/api/systemstatus/checktoken -i --header "Authorization: Bearer <b>[TOKEN]</b>"</i>
+    <br />
+    <br />
+    Note: Port will vary depending on whether you run via Visual Studio or <i>"dotnet run"</i> (port 5000)
+</body>
+</html>

@@ -1,0 +1,143 @@
+###
+{"MsgType":"AppCenterPushNotificationDto","AppCenterEndpoint":"https://api.appcenter.ms/v0.1/apps/LifeCouple/LifeCouple.Mobile-1/push/notifications","AppCenterNotification":{"notification_content":{"name":"Type_EBA_Points_Sent","title":null,"body":"You have received a deposit in your Emotional Bank Account.","custom_data":{"Page":"EmotionalBankAccountPage","UserData":"Per-lc-Partner","EntityId":""}},"notification_target":{"type":"devices_target","audiences":null,"devices":["ddf6a5c9-7b55-4e71-a457-54c69ad0b77f"]}}}
+{"MsgType":"AppCenterPushNotificationDto","AppCenterEndpoint":"https://api.appcenter.ms/v0.1/apps/LifeCouple/LifeCouple.Mobile-1/push/notifications","AppCenterNotification":{"notification_content":{"name":"Type_EBA_Points_Sent","title":null,"body":"You have received a deposit in your Emotional Bank Account.","custom_data":{"Page":"EmotionalBankAccountPage","UserData":"Per-lc-Partner"}},"notification_target":{"type":"devices_target","audiences":null,"devices":["ddf6a5c9-7b55-4e71-a457-54c69ad0b77f"]}}}
+
+### To App Center - iOS  Antons iOS 180910  
+POST https://api.appcenter.ms/v0.1/apps/LifeCouple/LifeCouple.Mobile/push/notifications HTTP/1.1
+X-API-Token: b5200c60dd2359ac9e10b38d8a412d4155b9cd85
+content-type: application/json
+
+{
+ "notification_content" : {
+ "name" : "LifeCouple",
+ "title" : "Push From App Center",
+ "body" : "Welcome!"
+ },
+   "notification_target" : {
+   "type" : "devices_target",
+   "devices" : ["7437f8e1-c94f-4bcc-a015-bdfd5a830eed"]
+ }
+}
+###
+  # #Antons Android 180910: ceb9211d-0458-4aa3-9afa-7f4a91486a03
+   # per android id 2018-09-16T19:21:28 ddf6a5c9-7b55-4e71-a457-54c69ad0b77f
+### To App Center - Android 
+POST https://api.appcenter.ms/v0.1/apps/LifeCouple/LifeCouple.Mobile-1/push/notifications HTTP/1.1
+X-API-Token: b5200c60dd2359ac9e10b38d8a412d4155b9cd85
+content-type: application/json
+
+{
+ "notification_content" : {
+     "name" : "LifeCouple_Test VS Code rest client",
+     "title" : "Title 180917-1639 to Per G",
+     "body" : "Body from VS Code rest client and a lots of words, probabaly more than what can fit on the screen. {{host}}",
+         "custom_data" : {
+         "key1" : "valOne", 
+         "key2" : "valTwo"
+        }
+    },
+   "notification_target" : {
+   "type" : "devices_target",
+    "devices" : ["ddf6a5c9-7b55-4e71-a457-54c69ad0b77f"] 
+ }
+}
+
+### 202 - tested 180918 @ 15:13
+POST https://api.appcenter.ms/v0.1/apps/LifeCouple/LifeCouple.Mobile-1/push/notifications HTTP/1.1
+X-API-Token: b5200c60dd2359ac9e10b38d8a412d4155b9cd85
+content-type: application/json
+
+{"notification_content":{"name":"Type_EBA_Points_Sent","title":null,"body":"You have received a deposit in your Emotional Bank Account.","custom_data":{"Page":"EmotionalBankAccountPage","UserData":"Per-lc-Partner","EntityId":""}},"notification_target":{"type":"devices_target","audiences":null,"devices":["ddf6a5c9-7b55-4e71-a457-54c69ad0b77f"]}}
+###
+{"notification_content":{"name":"Type_EBA_Points_Sent","title":null,"body":"You have received a deposit in your Emotional Bank Account.","custom_data":{"Page":"EmotionalBankAccountPage","UserData":"Per-lc-Partner","EntityId":"B483E91F-F6A8-4D63-A62D-13EA4B8C44CE"}},"notification_target":{"type":"devices_target","audiences":null,"devices":["ddf6a5c9-7b55-4e71-a457-54c69ad0b77f"]}}
+###
+
+
+### reponse
+HTTP/1.1 202 Accepted
+Access-Control-Allow-Origin: *
+date: Tue, 11 Sep 2018 16:52:03 GMT
+content-type: application/json; charset=utf-8
+server: Kestrel
+transfer-encoding: chunked
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=15768000
+
+{
+  "notification_id": "20180911165204:fa03b565b4154746b4263a1908b46e81"
+}
+
+### with different Target
+POST https://api.appcenter.ms/v0.1/apps/dwarner/lifecouple/push/notifications HTTP/1.1
+X-API-Token: b5200c60dd2359ac9e10b38d8a412d4155b9cd85
+content-type: application/json
+
+{
+"notification_content" : {
+ "name" : "LifeCouple",
+ "title" : "Push From App Center",
+ "body" : "Welcome!",
+ "custom_data" : {"key1" : "val1", "key2" : "val2"}
+ },
+   "notification_targets" : {
+   "type" : "audiences_target",
+    "audiences" : ["Dev Team"]
+ }
+}
+
+####
+{
+	"MsgType": "AppCenterPushNotificationDto",
+	"AppCenterEndpoint": "https://api.appcenter.ms/v0.1/apps/LifeCouple/LifeCouple.Mobile-1/push/notifications",
+	"AppCenterNotification": {
+		"notification_content": {
+			"name": "Type_EBA_Points_Sent",
+			"title": null,
+			"body": "You have received a deposit in your Emotional Bank Account.",
+			"custom_data": {
+				"Page": "EmotionalBankAccountPage",
+				"ForUserID": "86b37028-3ccd-4280-884b-d2eb63c90133"
+			}
+		},
+		"notification_target": {
+			"type": "devices_target",
+			"audiences": null,
+			"devices": ["ddf6a5c9-7b55-4e71-a457-54c69ad0b77f"]
+		}
+	}
+}{
+	"MsgType": "AppCenterPushNotificationDto",
+	"AppCenterEndpoint": "https://api.appcenter.ms/v0.1/apps/LifeCouple/LifeCouple.Mobile-1/push/notifications",
+	"AppCenterNotification": {
+		"notification_content": {
+			"name": "Type-EBA",
+			"title": null,
+			"body": "Body",
+			"custom_data": {
+				"Page": "EmotionalBankAccountPage",
+				"ForUserID": "86b37028-3ccd-4280-884b-d2eb63c90133"
+			}
+		},
+		"notification_target": {
+			"type": "devices_target",
+			"audiences": null,
+			"devices": ["ddf6a5c9-7b55-4e71-a457-54c69ad0b77f"]
+		}
+	}
+}
+
+{
+	"notification_content": {
+		"name": "Type_EBA_Points_Sent",
+		"title": null,
+		"body": "You have received a deposit in your Emotional Bank Account.",
+		"custom_data": {
+			"Page": "EmotionalBankAccountPage",
+			"ForUserID": "86b37028-3ccd-4280-884b-d2eb63c90133"
+		}
+	},
+	"notification_target": {
+		"type": "devices_target",
+		"audiences": null,
+		"devices": ["ddf6a5c9-7b55-4e71-a457-54c69ad0b77f"]
+	}

@@ -1,0 +1,31 @@
+# See README_... in this folder for more information
+
+### 200 
+GET https://{{host}}/api/systemstatus?$clientAccessKey=1514BF2C-4F9F-4E97-B452-877695B1FF2C HTTP/1.1
+
+### 200 
+GET https://{{host}}/api/systemstatus HTTP/1.1
+Authorization: 1514BF2C-4F9F-4E97-B452-877695B1FF2C
+
+### 401 (since it requires a valid $clientAccessKey)
+GET https://{{host}}/api/systemstatus HTTP/1.1
+content-type: application/json
+
+### 401 (since it requires a valid $clientAccessKey)
+GET https://{{host}}/api/systemstatus?$clientAccessKey=INVALIDKEY HTTP/1.1
+content-type: application/json
+
+### 401 (since they auth header is not valid
+GET https://{{host}}/api/systemstatus HTTP/1.1
+Authorization: 1514XXXXXXXXXXX
+
+### 200 (since they auth header is not valid, but query param is)
+GET https://{{host}}/api/systemstatus?$clientAccessKey=1514BF2C-4F9F-4E97-B452-877695B1FF2C HTTP/1.1
+Authorization: 1514XXXXXXXXXXX
+
+
+### 400/Timeout (as expected since it is http) 
+GET http://{{host}}/api/systemstatus HTTP/1.1
+content-type: application/json
+
+

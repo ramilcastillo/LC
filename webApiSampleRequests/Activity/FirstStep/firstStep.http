@@ -1,0 +1,6 @@
+
+
+### 204 (with all properties)
+GET https://{{host}}/api/userprofiles/me/activity/firststep  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}

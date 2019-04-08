@@ -1,0 +1,91 @@
+###
+GET https://localhost:44363/api/userprofile/d5cc07f5-8dde-47d9-ad7a-0d801554c4d5 HTTP/1.1
+content-type: application/json
+
+###
+POST https://localhost:44363/api/userprofile HTTP/1.1
+content-type: application/json
+
+{
+  "Id": "d5cc07f5-8dde-47d9-ad7a-0d801554c4d5",
+  "FirstName": null,
+  "Surname": null,
+  "DateOfBirth": "0001-01-01T00:00:00"
+}
+### 200
+GET https://localhost:44319/api/systemstatus/checktoken HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJleHAiOjE1MjE1MTAxMjcsIm5iZiI6MTUyMTUwNjUyNywidmVyIjoiMS4wIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5taWNyb3NvZnRvbmxpbmUuY29tLzZlY2VlZDllLTMyYTktNDk5My1hYjFmLWJhODM5ODlkZjc0YS92Mi4wLyIsInN1YiI6IjczYTllZjg1LTViMjItNGY2MS05ODdmLTdiNTY2ZGJiZjRmZCIsImF1ZCI6IjljNTkxZjc5LTQ0OTUtNDQ4OS05ZTllLTAxMmZlOWJlMTUyZiIsIm5vbmNlIjoiZGVmYXVsdE5vbmNlIiwiaWF0IjoxNTIxNTA2NTI3LCJhdXRoX3RpbWUiOjE1MjE1MDY1MjcsIm9pZCI6IjczYTllZjg1LTViMjItNGY2MS05ODdmLTdiNTY2ZGJiZjRmZCIsImVtYWlscyI6WyJwZXJAZ3JpbXNrb2cuY29tIl0sInRmcCI6IkIyQ18xX3N1c2kifQ.K0vVEv070JI4w1LOsXN55Z7GSWZfI5REIv7oukNqLSlgqvTqaupTg3SykHb3xGq5-JrsLP4LQpPakmnHOYy_sCplMfftOmiBn9XVJGuuD2izgvmKkDhm5mxQ2oFwzGoFMlbkEfj5CrunfpsKH2hfCjx_qXYSLNhuJC2F06sf3htpbAAwIfrEV9MC6jak_V7dC19mzSiN5o6wALe9TblJF68bux3TIvoCfExLFuF756bgKPBmZztcuwi8h8ELxBYU9CZBlUYEImqnFp00zs7DSvpdKLq8BsnT0wMG1zsNdmTst5AV5B7WtbMUHEPOQutTo-nh5LUbx1ny4G9BNNiJbw
+
+
+###Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJleHAiOjE1MjEyOTkyNjMsIm5iZiI6MTUyMTI5NTY2MywidmVyIjoiMS4wIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5taWNyb3NvZnRvbmxpbmUuY29tLzZlY2VlZDllLTMyYTktNDk5My1hYjFmLWJhODM5ODlkZjc0YS92Mi4wLyIsInN1YiI6IjczYTllZjg1LTViMjItNGY2MS05ODdmLTdiNTY2ZGJiZjRmZCIsImF1ZCI6IjljNTkxZjc5LTQ0OTUtNDQ4OS05ZTllLTAxMmZlOWJlMTUyZiIsIm5vbmNlIjoiZGVmYXVsdE5vbmNlIiwiaWF0IjoxNTIxMjk1NjYzLCJhdXRoX3RpbWUiOjE1MjEyOTU2NjMsIm9pZCI6IjczYTllZjg1LTViMjItNGY2MS05ODdmLTdiNTY2ZGJiZjRmZCIsImVtYWlscyI6WyJwZXJAZ3JpbXNrb2cuY29tIl0sInRmcCI6IkIyQ18xX3N1c2kifQ.gcvdB9yrYACetfUW0zigAmeYPdkWUv6IK95Rifqnhk61UQEtJnAA106ikaNjU0TclwYp60og3W0hI8onHAmiWEj9QY1GR9wpgPQyECsWXyZ3JFw2BNW15FaFWIEsybNr0vKFmDReOl3s6kHCquN_57T3f-5-RzYVlpZCw2PgqXFJWQ5Ui0d6Zxu3yD7RKhpTi1us3kHBIRWJ4e5ibMICGmE7PFVqyi-x9kHbtVDtptHT2lNc2o6W_AgMT2czxl4TUSfIxKWQDAbQIeqx2nKKjdo3LP7Y44x0r2VQD1HjjdQw_sPYWZ_Lyp25KnNpCmDay4j9tYwySl7I916vmHieCg
+
+### Create user - Note that 2 users are already seeded so this is not really needed for regular dev
+POST https://{{host}}/api/userprofiles = Implemented (create new user based on AD B2 JWT token, only be used once we have AD B2C completed)
+POST https://{{host}}/api/userprofiles/devuser = Implemented (api only for dev, to create new user based on payload)
+
+### Get Token - DEV only. Recommend using this as a starting point for dev test
+POST https://{{host}}/api/tokens = Implemented (api only for dev, to get JWT token based on payload)
+
+### Get (basic) UserProfile 
+GET https://{{host}}/api/userprofiles/me 
+
+### Registration 
+GET https://{{host}}/api/userprofiles/me/registration/aboutyou = Implemented
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyou = Implemented
+
+GET https://{{host}}/api/userprofiles/me/registration/aboutyourpartner = Implemented
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyourpartner = Implemented
+
+GET https://{{host}}/api/userprofiles/me/registration/aboutyourrelationship = Implemented
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyourrelationship = Implemented
+
+GET https://{{host}}/api/userprofiles/me/registration/paymentandterms = Implemented
+PUT https://{{host}}/api/userprofiles/me/registration/paymentandterms = Implemented
+
+### OnBoarding
+GET https://{{host}}/api/userprofiles/me/onboarding/template = Implemented
+
+### Various
+GET https://{{host}}/api/userprofiles/me = not implemented, no plans to implement yet
+
+
+### 204 (set Answers for One or More questions for a given questionnaire template Id
+PUT https://{{host}}/api/userprofiles/me/onboarding  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "QuestionnaireTemplateId": "12ec629a-544d-487e-9032-e20cc7907a3d", //getting the Id from the GET request above
+  "AnswerToSet": { //optional Used if only set Answer for 1 question
+    "QuestionId": "28F18A49-D142-4A60-A7ED-2669C7D033F2", //using the first Question Id from the 'questions' collection from the 1st questionnaireSets from the GET request above
+    "Value": "1",
+    "ChildAnswer": null
+  }
+}
+
+###
+GET https://{{host}}/api/userprofiles/me/onboarding  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 204 (set Answers for One or More questions for a given questionnaire template Id
+PUT https://{{host}}/api/userprofiles/me/onboarding  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "Id": "640F40C9-C67E-4867-A6F5-9F895BDBEDAF",
+  "TypeOfQuestion": 4,
+  "MinRange": 0,
+  "MaxRange": 10,
+  "Title": "Affection",
+  "Description": "Affection takes the loving relationship between a man and woman into the deeper realm of tender expressions. LifeCouple views affection as giving words of affirmation, acts of service, gifts, and physical touch.\r\n\r\nUsing this or your definition of affection.",
+  "Text": "Move the slider to indicate your satisfaction level",
+  "UserValue": "5",
+  "AnswerOptions": null
+}
+
+
+###
+https://storagelcgeneral.blob.core.windows.net/mobile-app-resources/intensity-small.png

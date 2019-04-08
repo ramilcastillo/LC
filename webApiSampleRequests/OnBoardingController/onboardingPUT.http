@@ -1,0 +1,35 @@
+# See README_... in this folder for more information
+
+# OnBoarding data 
+
+### 200 (get OnBoarding Questions with the 'userValue', if any set yet
+# @name templateResponse
+GET https://{{host}}/api/userprofiles/me/onboarding  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 204 (set Answers for One or More questions for a given questionnaire template Id
+PUT https://{{host}}/api/userprofiles/me/onboarding  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "QuestionnaireTemplateId": "{{templateResponse.response.body.$.id}}", //getting the Id from the GET request above
+  "AnswerToSet": { //optional Used if only set Answer for 1 question
+    "QuestionId": "{{templateResponse.response.body.$.questionnaireSets[0].questions[0].id}}", //using the first Question Id from the 'questions' collection from the 1st questionnaireSets from the GET request above
+    "Value": "1",
+    "ChildAnswer": null
+  },
+  "AnswersToSet": [ //optional, can be used to set Answer for One or More questions
+      {
+          "QuestionId": "{{templateResponse.response.body.$.questionnaireSets[0].questions[1].id}}", //using the 2nd Question Id from the 'questions' collection from the 1st questionnaireSets from the GET request above
+          "Value": "2",
+          "ChildAnswer": null
+      }
+  ]
+}
+
+### - 1st question in the response should have userValue = 1 and 2nd quesiton value 2
+GET https://{{host}}/api/userprofiles/me/onboarding  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}

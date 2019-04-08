@@ -1,0 +1,37 @@
+# See README_... in this folder for more information
+
+# PartnerInvite - used by WebApp
+
+### 204 Decline invitation - only ok with valid invitation Id
+PUT https://{{host}}/api/pi/EF0E8E5C-6A65-4803-96AB-C27EB911524B/decline  HTTP/1.1
+Authorization: 1514BF2C-4F9F-4E97-B452-877695B1FF2C
+
+
+### 204 Accept invitation - only ok with valid invitation Id
+PUT https://{{host}}/api/pi/EF0E8E5C-6A65-4803-96AB-C27EB911524B/accept  HTTP/1.1
+Authorization: 1514BF2C-4F9F-4E97-B452-877695B1FF2C
+
+### 200 Get Invitation details
+GET https://{{host}}/api/pi/EF0E8E5C-6A65-4803-96AB-C27EB911524B
+Authorization: 1514BF2C-4F9F-4E97-B452-877695B1FF2C
+
+# Used for unit testing - create user and then get a token used for test
+# Need to be called against licapicitest endpoint
+### 201
+POST https://{{host}}/api/userprofiles/devuser HTTP/1.1
+Authorization: 1514BF2C-4F9F-4E97-B452-877695B1FF2C
+content-type: application/json
+
+{
+    "email": "Test-InviteeControllerTests.Create_Invitee-Invitee@lifecouple.net"
+}
+
+### Get token using below email
+POST https://{{host}}/api/tokens HTTP/1.1
+Authorization: 1514BF2C-4F9F-4E97-B452-877695B1FF2C
+content-type: application/json
+
+{
+    "email": "Test-InviteeControllerTests.Create_Invitee-Invitee@lifecouple.net",
+    "password": "Test-InviteeControllerTests.Create_Invitee-Invitee@"
+}

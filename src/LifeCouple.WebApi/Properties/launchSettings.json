@@ -1,0 +1,28 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:8888/",
+      "sslPort": 44319
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "Serilog:WriteTo:0:Args:storageTableName": "localSerilog",
+        "Serilog:WriteTo:0:Args:connectionString": "UseDevelopmentStorage=true",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "LifeCouple.Server": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:59980/"
+    }
+  }
+}

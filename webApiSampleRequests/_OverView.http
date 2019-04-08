@@ -1,0 +1,93 @@
+# To be called when we get new users through AD B2C
+### 201, only pass the bearer token in the header
+### Response Body: <empty>
+POST https://{{host}}/api/userprofiles HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 200 - To get userprofile for current user, using the oid in the token
+### Response Body: UserProfileResponseInfo
+GET https://{{host}}/api/userprofiles/me HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+# To get userprofile for current user, using the oid in the token
+### 200 or 404 
+### Response Body: UserProfileRegAboutYouResponseInfo
+GET https://{{host}}/api/userprofiles/me/registration/aboutyou  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+# To Set userprofile for current user, using the oid in the token
+### 204 
+### Request Body: UserProfileRegAboutYouRequestInfo
+### Response Body: <empty>
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyou  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+# Get About your relationship for current user, using the oid in the token
+### 404 when no data, 200 when data
+GET https://{{host}}/api/userprofiles/me/registration/aboutyourrelationship  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+### Response Body: UserProfileRegAboutYourRelationshipResponseInfo
+
+# Get About your relationship for current user, using the oid in the token
+### 204 (with all properties)
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyourrelationship  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+### Request Body: UserProfileRegAboutYourRelationshipRequestInfo
+### Response Body: <empty>
+
+# Get UserprofileRegistrationPaymentAndTerms for current user, using the oid in the token
+### 404 when no data, 200 when data
+GET https://{{host}}/api/userprofiles/me/registration/paymentandterms  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+# Response Body: UserProfileRegPaymentResponseInfo
+
+# Set UserprofileRegistrationPaymentAndTerms for current user, using the oid in the token
+### 204 (with all properties)
+PUT https://{{host}}/api/userprofiles/me/registration/paymentandterms  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+### Request Body: UserProfileRegPaymentRequestInfo
+### Response Body: <empty>
+
+# Get OnBoarding Questions.. 
+### 200 (get metadata for the 1 set of questions for the Mobile app to dynmaically generate the Views)
+GET https://{{host}}/api/userprofiles/me/onboarding  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+# Response Body: OnBoardingTemplateResponseInfo
+
+
+# Set OnBoarding Questions.. 
+### 204 (set Answers for One or More questions for a given questionnaire template Id
+PUT https://{{host}}/api/userprofiles/me/onboarding  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+### Request Body: QuestionnaireAnswersRequestInfo
+### Response Body: <empty>
+
+
+### 201 - get a token
+POST https://lcapicitest.azurewebsites.net/api/tokens HTTP/1.1
+content-type: application/json
+
+{
+    "email": "dsiegel@lifecouple.net",
+    "password": "dsiegel@"
+}
+
+
+### 200 - get system status
+GET https://{{host}}/api/systemstatus?$clientAccessKey=1514BF2C-4F9F-4E97-B452-877695B1FF2C HTTP/1.1
+content-type: application/json
+
+### EBA - 200 at all times, as long as the user exists
+GET https://{{host}}/api/userprofiles/me/eba  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}

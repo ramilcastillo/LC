@@ -1,0 +1,33 @@
+{
+  //https://github.com/serilog/serilog-settings-configuration
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Console" ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "AzureTableStorageWithProperties",
+        "Args": {
+          //"storageTableName": "SerilogLogging", //Should be set/overridden in Environment Variables using 'Serilog:WriteTo:0:Args:storageTableName'
+          //"connectionString": "UseDevelopmentStorage=true", //Should be set/overridden in Environment Variables using 'Serilog:WriteTo:0:Args:connectionString'
+          "writeInBatches": "true",
+          "batchPostingLimit": 10,
+          "period": "00:00:10",
+          "keyGenerator": "LifeCouple.Server.Instrumentation.SerilogAzureTableKeyGenerator, LifeCouple.Server.Instrumentation",
+          "propertyColumns": [ "serverMachineName", "traceId", "apiPath", "method", "statusCode", "durationMs", "ip", "tSstr" ]
+        }
+      },
+      { "Name": "Console" }
+    ],
+    //"Enrich": [ "FromLogContext" ],
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ],
+    "Properties": {
+      "Application": "ChangeMeToTheNameOfYourApp"
+    }
+  }
+}

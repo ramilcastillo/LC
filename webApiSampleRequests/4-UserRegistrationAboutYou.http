@@ -1,0 +1,49 @@
+# See README_... in this folder for more information
+
+# To get userprofile for current user, using the oid in the token
+### 404 first time since no data yet, 200 when data
+GET https://{{host}}/api/userprofiles/me/registration/aboutyou  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 204 (with all properties)
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyou  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "firstName": "per",
+  "lastName": "gr",
+  #"email": "email@grimskog.com",
+  "mobilePhone": "7601",
+  "notificationOption": "s",
+  "gender": "m",
+  "dateOfBirth": "1999-12-31"
+}
+
+### 204 (with only some properties)
+PUT https://{{host}}/api/userprofiles/me/registration/aboutyou  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  #"firstName": "per",
+  # "lastName": "grimskog",
+  #"email": "email",
+  # "mobilePhone": null,
+  "notificationOption": "x",
+  #"gender": "m",
+  #"dateOfBirth": "2001-12-31T00:00:00"
+}
+
+
+### 404 (no such api endpoint)
+POST https://{{host}}/api/userprofiles/me/registration/aboutyou  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}
+
+
+### 404 (no such api endpoint)
+GET https://{{host}}/api/userprofiles/me/registration  HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{token}}

@@ -1,0 +1,32 @@
+# See README_... in this folder for more information
+
+### 201
+POST https://{{host}}/api/tokens HTTP/1.1
+Authorization: 1514BF2C-4F9F-4E97-B452-877695B1FF2C
+content-type: application/json
+
+{
+    "email": "pgrimskog@lifecouple.net",
+    "password": "pgrimskog@"
+}
+
+### 201 - get a token
+POST https://{{host}}/api/tokens HTTP/1.1
+Authorization: 1514BF2C-4F9F-4E97-B452-877695B1FF2C
+content-type: application/json
+
+{
+    "email": "dsiegel@lifecouple.net",
+    "password": "dsiegel@"
+}
+
+###
+POST https://{{host}}/api/tokens HTTP/1.1
+Authorization: 1514BF2C-4F9F-4E97-B452-877695B1FF2C
+content-type: application/json
+
+{
+    "email": "test1@lifecouple.net",
+    "password": "test1@"
+}
+

@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "LifeCouple.Server.Messaging.Tests": {
+      "commandName": "Project"
+    }
+  }
+}
